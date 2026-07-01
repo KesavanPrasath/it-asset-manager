@@ -14,4 +14,4 @@ RUN pip install flask flask-cors gunicorn
 EXPOSE 8080
 
 # Running Flask app using gunicorn production server
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "backend.app:app"]
+CMD ["python", "backend/app.py"]
