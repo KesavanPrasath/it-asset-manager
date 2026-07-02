@@ -34,48 +34,31 @@
             <input type="text" id="assetName" placeholder="Device Name (e.g., MacBook Pro)">
             <input type="text" id="assetSeriel" Placeholder="Serial Number (Unique code)">
             <input type="text" id="assetStatus" placeholder="Status(e.g, In Stock)">
-            
-
-
-
-
-
-
-
-
-            <h1>IT Department Asset Manager</h1>
-
-    <section>
-        <h2>Add a New Device</h2>
-        <input type="text" id="assetName" placeholder="Device Name (e.g., MacBook Pro)">
-        <input type="text" id="assetSerial" placeholder="Serial Number (Unique code)">
-        <input type="text" id="assetStatus" placeholder="Status (e.g., In Stock)">
-        <button onclick="createAsset()">Add Asset</button>
-    </section>
-
-    <section>
-        <h2>Current Device Inventory</h2>
-        
-        <div style="margin-bottom: 15px;">
-            <label for="assetSearch"><strong>Quick Filter Assets: </strong></label>
-            <input type="text" id="assetSearch" onkeyup="filterAssets()" placeholder="Type names, codes or status keywords...">
+            <button class="btn btn-primary" onclick="createAsset()">AddAsset</button>
         </div>
+    </selection>
 
-        <button onclick="loadAssets()">Refresh Inventory</button>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Device Name</th>
-                    <th>Serial Number</th>
-                    <th>Current Status</th>
-                    <th>Management Actions</th>
-                </tr>
-            </thead>
-            <tbody id="assetTableBody">
-                </tbody>
-        </table>
-    </section>
+    <section class="inventory-panel">
+        <h2>Current Device inventory-panel</h2>
 
-    <script src="/static/app.js"></script>
-</body>
-</html>
+        <div class="filter-actions-bar">
+            <div class="search-box"
+                <lable for="assetsearch"><"strong>"><Quick Filter Assets: </strong></label>
+                <input type="text" id="assetSearch" onkeyup="filterAssets()" placeholder="Type names, codes or status keywords....">
+                </div>
+                <button class="btn btn-secondary" onclick="loadAssets()">Refresh Inventory</button>
+            </div>
+
+            <div class="table-container">
+                <tale>
+                    <thead>
+                        <tr>
+                            <tr>
+                                <th>Device Name</th>
+                                <th>Serial Number
+                                <th>
+                                <th>
+
+
+
+           
