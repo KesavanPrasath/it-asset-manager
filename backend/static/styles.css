@@ -37,3 +37,14 @@ th, td {
     border-radius: 6px;
     margin-bottom: 25px;
 }
+
+.company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: block;
+}
+
+.app-title {
+    font-size: 1rem;
+    opacity: 0.85;
+}
