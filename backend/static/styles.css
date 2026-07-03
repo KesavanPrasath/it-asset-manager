@@ -22,3 +22,18 @@ th, td {
     padding: 8px;
     text-align: left;
 }
+
+/* Sysco Labs Corporate Variables */
+:root {
+    --primary-blue: #004B87;
+    --accent-blue: #0076CE;
+}
+
+/* Header styling */
+.app-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
