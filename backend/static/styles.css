@@ -111,3 +111,34 @@ th, td {
     width: 100%;
     padding: 10px;
 }
+
+CSS
+/* Status Badge - Base Layout */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Color Rules - depending on Device State */
+.status-available {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.status-inuse {
+    background-color: #CCE5FF;
+    color: #004085;
+}
+
+.status-maintenance {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status-broken {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
