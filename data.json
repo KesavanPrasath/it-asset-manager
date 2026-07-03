@@ -3,30 +3,5 @@
         "name": "Presentation Ipad",
         "serial": "SN-SCU-2026",
         "status": "Available"
-    },
-    {
-        "name": "macbook pro 16",
-        "serial": "SN-SYSCO-001",
-        "status": "In Use"
-    },
-    {
-        "name": "macbook pro 16",
-        "serial": "SN-SYSCO-001",
-        "status": "In Use"
-    },
-    {
-        "name": "macbook pro 16",
-        "serial": "SN-SYSCO-001",
-        "status": "In Use"
-    },
-    {
-        "name": "macbook pro 16",
-        "serial": "SN-SYSCO-001",
-        "status": "In Use"
-    },
-    {
-        "name": "macbook pro 16",
-        "serial": "SN-SYSCO-001",
-        "status": "In Use"
     }
 ]
