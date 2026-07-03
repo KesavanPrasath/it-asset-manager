@@ -1,3 +1,9 @@
+/* Sysco Labs Corporate Variables */
+:root {
+    --primary-blue: #004B87;
+    --accent-blue: #0076CE;
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
@@ -11,7 +17,7 @@ section {
 }
 input, button {
     padding: 6px;
-    margin-right: 10px;
+    margin-right: 10px; 
 }
 table {
     width: 100%;
