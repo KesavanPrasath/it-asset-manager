@@ -21,8 +21,8 @@ async function loadAssets() {
                 </div>
             </td>
             <td>
-                <button onclick="updateAsset('${asset.serial}')">Save Changes</button>
-                <button onclick="deleteAsset('${asset.serial}')">Remove</button>
+               <button class="btn-action-save" onclick="updateAsset('${asset.serial}')">Save Changes</button>
+               <button class="btn-action-remove" onclick="deleteAsset('${asset.serial}')">Remove</button>
             </td>
         `;
         tableBody.appendChild(row);
