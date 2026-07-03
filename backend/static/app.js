@@ -1,7 +1,13 @@
 const API_URL = '/api/assets';
 
 // READ: Pull assets from API and draw them inside the table body
-assets.forEach(asset => {
+async function loadAssets() {
+    const response = await fetch(API_URL);
+    const assets = await response.json();
+    const tableBody = document.getElementById('assetTableBody');
+    tableBody.innerHTML = ''; 
+
+    assets.forEach(asset => {
         // Determine the color class using a clean student-style helper function
         const badgeClass = getStatusClass(asset.status);
 
@@ -20,9 +26,10 @@ assets.forEach(asset => {
             </td>
         `;
         tableBody.appendChild(row);
-    }
-)
-;
+    });
+}
+
+// Helper function for specific CSS badge colors
 // Helper function for specific CSS badge colors
 function getStatusClass(statusText) {
     if (!statusText) return '';
