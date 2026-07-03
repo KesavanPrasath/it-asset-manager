@@ -31,18 +31,14 @@
 
 <div class="main-layout">
 
-    <selection class="control-panel">
-        <h2>Add a new Device</h2>
-        <div class=" from-group">
-            <input type="text" id="assetName" placeholder="Device Name (e.g., MacBook Pro)">
-            <input type="text" id="assetSeriel" Placeholder="Serial Number (Unique code)">
-            <input type="text" id="assetStatus" placeholder="Status(e.g, In Stock)">
-            <button class="btn btn-primary" onclick="createAsset()">AddAsset</button>
-        </div>
-    </selection>
-
-    <section class="inventory-panel">
-        <h2>Current Device inventory-panel</h2>
+        <section class="control-panel">
+            <h2>Add a new Device</h2>
+            <div class="form-group"> <input type="text" id="assetName" placeholder="Device Name (e.g., MacBook Pro)">
+                <input type="text" id="assetSerial" placeholder="Serial Number (Unique code)"> <input type="text" id="assetStatus" placeholder="Status(e.g, In Stock)">
+                <button class="btn btn-primary" onclick="createAsset()">Add Asset</button>
+   </div>
+        </section> <section class="inventory-panel">
+            <h2>Current Device Inventory</h2>
 
         <div class="filter-actions-bar">
             <div class="search-box"
