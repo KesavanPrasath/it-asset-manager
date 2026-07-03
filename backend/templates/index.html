@@ -8,21 +8,24 @@
 <body>
 
     <header class="app-header">
-        <div class="brand">
-            <span class="company-name">Sysco Labs</span>
-        </div>
-    </header>
-
-    <div class="metrics-container">
-        <div class="card metric-card total-card">
-            <h3>Total Infrastructer Assets</h3>
-            <p id="total-assets-count">0</p>
-
+    <div class="brand">
+        <span class="company-name">Sysco Labs</span>
+        <span class="app-title">Enterprise Asset Management Portal</span>
     </div>
-    <div class="card metric-card deployed-card>
-        <h3>Devices In Use</H3>
+</header>
+
+<div class="metrics-container">
+    <div class="card metric-card">
+        <h3>Total Assets</h3>
+        <p id="total-assets-count">0</p>
+    </div>
+    <div class="card metric-card">
+        <h3>In Use</h3>
         <p id="in-use-count">0</p>
-    
+    </div>
+    <div class="card metric-card">
+        <h3>Available</h3>
+        <p id="available-count">0</p>
     </div>
 </div>
 
@@ -43,7 +46,7 @@
 
         <div class="filter-actions-bar">
             <div class="search-box"
-                <lable for="assetsearch"><"strong>"><Quick Filter Assets: </strong></label>
+                <label for="assetSearch"><strong>Quick Filter Assets: </strong></label>
                 <input type="text" id="assetSearch" onkeyup="filterAssets()" placeholder="Type names, codes or status keywords....">
                 </div>
                 <button class="btn btn-secondary" onclick="loadAssets()">Refresh Inventory</button>
@@ -55,10 +58,18 @@
                         <tr>
                             <tr>
                                 <th>Device Name</th>
-                                <th>Serial Number
-                                <th>
-                                <th>
-
-
-
-           
+                                <th>Serial Number</th>
+                                <th>Current Status</th>
+                                <th>Management Actions</th>
+                            </tr>
+                        </thead>
+                        </tbody id="assetTableBody">
+                            </tbody>
+                    </table>
+                </tale>
+            </div>
+        </selection>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
