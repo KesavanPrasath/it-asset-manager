@@ -1,26 +1,28 @@
 const API_URL = '/api/assets';
 
 // READ: Pull assets from API and draw them inside the table body
-async function loadAssets() {
-    const response = await fetch(API_URL);
-    const assets = await response.json();
-    const tableBody = document.getElementById('assetTableBody');
-    tableBody.innerHTML = ''; 
+assets.forEach(asset => {
+        // Determine the color class using a clean student-style helper function
+        const badgeClass = getStatusClass(asset.status);
 
-    assets.forEach(asset => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td><input type="text" id="name-${asset.serial}" value="${asset.name}"></td>
             <td>${asset.serial}</td>
-            <td><input type="text" id="status-${asset.serial}" value="${asset.status}"></td>
+            <td>
+                <div class="badge-wrapper">
+                    <input type="text" id="status-${asset.serial}" class="status-badge ${badgeClass}" value="${asset.status}" onchange="loadAssets()">
+                </div>
+            </td>
             <td>
                 <button onclick="updateAsset('${asset.serial}')">Save Changes</button>
                 <button onclick="deleteAsset('${asset.serial}')">Remove</button>
             </td>
         `;
         tableBody.appendChild(row);
-    });
-}
+    }
+)
+;
 
 // CREATE: Extract form inputs and submit stringified objects via POST method
 async function createAsset() {
