@@ -23,7 +23,24 @@ assets.forEach(asset => {
     }
 )
 ;
-
+// Helper function for specific CSS badge colors
+function getStatusClass(statusText) {
+    if (!statusText) return '';
+    
+    const status = statusText.toLowerCase().trim();
+    
+    if (status === 'available' || status === 'in stock') {
+        return 'status-available';
+    } else if (status === 'in use' || status === 'deployed') {
+        return 'status-inuse';
+    } else if (status === 'maintenance') {
+        return 'status-maintenance';
+    } else if (status === 'broken') {
+        return 'status-broken';
+    }
+    
+    return ''; // Fallback default if nothing matches
+}
 // CREATE: Extract form inputs and submit stringified objects via POST method
 async function createAsset() {
     const name = document.getElementById('assetName').value;
