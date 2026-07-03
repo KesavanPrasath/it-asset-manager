@@ -78,3 +78,36 @@ th, td {
     font-weight: bold;
     color: var(--primary-blue);
 }
+
+/* Split columns screen layout */
+.main-layout {
+    display: flex;
+    gap: 25px;
+}
+
+.control-panel {
+    flex: 1;
+}
+
+.inventory-panel {
+    flex: 2;
+}
+
+/* Input layout wrapping */
+.form-group input {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+}
