@@ -8,30 +8,29 @@ CORS(app)
 
 DATA_FILE = 'data.json'
 
-# Helper function to read the current items from your database file
+# Helper function to read the data file
 def read_data():
     if not os.path.exists(DATA_FILE):
         return []
     with open(DATA_FILE, 'r') as file:
         return json.load(file)
 
-# Helper function to overwrite your database file with fresh updates
+# Helper function to save changes to the file
 def write_data(data):
     with open(DATA_FILE, 'w') as file:
         json.dump(data, file, indent=4)
 
-# 1. READ ALL (GET method)
+# 1. GET ALL ASSETS
 @app.route('/api/assets', methods=['GET'])
 def get_assets():
     return jsonify(read_data()), 200
 
-# 2. CREATE (POST method)
+# 2. ADD NEW ASSET
 @app.route('/api/assets', methods=['POST'])
 def add_asset():
     new_asset = request.json
     data = read_data()
     
-    # Check if user missed typing any fields
     if not new_asset.get('name') or not new_asset.get('serial'):
         return jsonify({"error": "Name and Serial are mandatory"}), 400
         
@@ -39,7 +38,7 @@ def add_asset():
     write_data(data)
     return jsonify(new_asset), 201
 
-# 3. UPDATE (PUT method)
+# 3. UPDATE ASSET
 @app.route('/api/assets/<serial>', methods=['PUT'])
 def update_asset(serial):
     update_info = request.json
@@ -52,9 +51,9 @@ def update_asset(serial):
             write_data(data)
             return jsonify(asset), 200
             
-    return jsonify({"error": "No asset found with that serial number"}), 404
+    return jsonify({"error": "Asset not found"}), 404
 
-# 4. DELETE (DELETE method)
+# 4. DELETE ASSET
 @app.route('/api/assets/<serial>', methods=['DELETE'])
 def delete_asset(serial):
     data = read_data()
@@ -66,6 +65,7 @@ def delete_asset(serial):
     write_data(updated_data)
     return jsonify({"message": "Asset deleted successfully"}), 200
 
+# MAIN SITE ROUTE
 @app.route('/')
 def home():
     return render_template('index.html')
