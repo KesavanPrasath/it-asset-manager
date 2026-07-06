@@ -25,14 +25,25 @@ def write_data(data):
 def get_assets():
     return jsonify(read_data()), 200
 
-# 2. ADD NEW ASSET
+# 2. ADDING NEW ASSET
 @app.route('/api/assets', methods=['POST'])
 def add_asset():
     new_asset = request.json
     data = read_data()
     
-    if not new_asset.get('name') or not new_asset.get('serial'):
-        return jsonify({"error": "Name and Serial are mandatory"}), 400
+    # Clean up empty spaces from inputs
+    name = new_asset.get('name', '').strip()
+    serial = new_asset.get('serial', '').strip()
+    status = new_asset.get('status', '').strip()
+
+    # Reject if fields are empty string values
+    if not name or not serial:
+        return jsonify({"error": "Name and Serial fields cannot be empty"}), 400
+        
+    # Prevent duplicate serial numbers
+    for asset in data:
+        if asset['serial'] == serial:
+            return jsonify({"error": "An asset with this serial number already exists"}), 400
         
     data.append(new_asset)
     write_data(data)
