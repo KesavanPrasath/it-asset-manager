@@ -206,3 +206,28 @@ CSS
 .btn-action-remove:hover {
     text-decoration: underline;
 }
+
+//adding stles
+
+/* Utility Action Ribbon Layout */
+.action-buttons-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-export {
+    background-color: #28A745; /* Clean corporate operations green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    height: 40px;
+    transition: background-color 0.2s;
+}
+
+.btn-export:hover {
+    background-color: #218838;
+}
