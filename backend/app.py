@@ -53,7 +53,7 @@ def add_asset():
     }
     data.append(validated_asset)
     write_data(data)
-    return jsonify(new_asset), 201
+    return jsonify(validated_asset), 201
 
 # 3. UPDATE ASSET
 @app.route('/api/assets/<serial>', methods=['PUT'])
