@@ -102,7 +102,6 @@ th, td {
     box-sizing: border-box;
 }
 
-
 .btn-primary {
     background-color: var(--primary-blue);
     color: white;
@@ -112,7 +111,6 @@ th, td {
     padding: 10px;
 }
 
-CSS
 /* Status Badge - Base Layout */
 .status-badge {
     padding: 6px 12px;
@@ -162,38 +160,6 @@ CSS
 
 .btn-action-remove {
     background-color: transparent;
-    color: #DC3545; /* red */
-    border: none;
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.btn-action-remove:hover {
-    text-decoration: underline;
-}
-
-/* Table Action Buttons Layout */
-.btn-action-save {
-    background-color: var(--accent-blue);
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-action-save:hover {
-    background-color: var(--primary-blue);
-}
-
-.btn-action-remove {
-    background-color: transparent;
     color: #DC3545; /* Clean corporate alert red */
     border: none;
     padding: 6px 10px;
@@ -207,22 +173,21 @@ CSS
     text-decoration: underline;
 }
 
-//adding stles
-
 /* Utility Action Ribbon Layout */
 .action-buttons-group {
     display: flex;
     gap: 10px;
 }
 
+/* Style for the Export Button */
 .btn-export {
-    background-color: #28A745; /* Clean corporate operations green */
+    background-color: #28A745; /* Operations Green */
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: 10px 18px;
     height: 40px;
     transition: background-color 0.2s;
