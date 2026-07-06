@@ -124,6 +124,52 @@ function filterAssets() {
     }
 }
 
-// Ensure table records draw upon page render
+// Ensuring table records draw upon page render
 window.onload = loadAssets;
 
+// UTILITY: Parses active DOM inventory items and downloads a formatted CSV audit report
+function exportCSVReport() {
+    const tableBody = document.getElementById('assetTableBody');
+    const rows = tableBody.getElementsByTagName('tr');
+    
+    // Check if there is actual data to export
+    if (rows.length === 0) {
+        alert('No asset inventory records available to export.');
+        return;
+    }
+
+    // Set up the CSV headers
+    let csvContent = "Device Name,Serial Number,Current Status\n";
+
+    // Loop over each row inside the visible table array
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        
+        // Skiped hidden rows if the user filtered the view
+        if (row.style.display === 'none') continue;
+
+        // Extract values accurately from inputs and text cells
+        const nameInput = row.querySelector('input[id^="name-"]');
+        const statusInput = row.querySelector('input[id^="status-"]');
+        
+        const name = nameInput ? nameInput.value.replace(/,/g, "") : "";
+        const serial = row.cells[1] ? row.cells[1].textContent.trim() : "";
+        const status = statusInput ? statusInput.value.trim() : "";
+
+        // Append line item
+        csvContent += `${name},${serial},${status}\n`;
+    }
+
+    // Created a data blob link and trigger a native browser download block
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute("href", url);
+    link.setAttribute("download", "Sysco_Labs_IT_Asset_Report.csv");
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
