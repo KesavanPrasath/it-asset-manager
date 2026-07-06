@@ -174,3 +174,35 @@ CSS
 .btn-action-remove:hover {
     text-decoration: underline;
 }
+
+/* Table Action Buttons Layout */
+.btn-action-save {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-action-save:hover {
+    background-color: var(--primary-blue);
+}
+
+.btn-action-remove {
+    background-color: transparent;
+    color: #DC3545; /* Clean corporate alert red */
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-action-remove:hover {
+    text-decoration: underline;
+}
