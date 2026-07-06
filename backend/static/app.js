@@ -8,7 +8,7 @@ async function loadAssets() {
     tableBody.innerHTML = ''; 
 
     assets.forEach(asset => {
-        // Determine the color class using a clean student-style helper function
+        // Determine the color class using helping function
         const badgeClass = getStatusClass(asset.status);
 
         const row = document.createElement('tr');
@@ -21,8 +21,9 @@ async function loadAssets() {
                 </div>
             </td>
             <td>
-               <button class="btn-action-save" onclick="updateAsset('${asset.serial}')">Save Changes</button>
-               <button class="btn-action-remove" onclick="deleteAsset('${asset.serial}')">Remove</button>
+            // updating the buttons as for classes with help of AI*
+                <button class="btn-action-save" onclick="updateAsset('${asset.serial}')">Save Changes</button>
+                <button class="btn-action-remove" onclick="deleteAsset('${asset.serial}')">Remove</button>
             </td>
         `;
         tableBody.appendChild(row);
@@ -125,3 +126,4 @@ function filterAssets() {
 
 // Ensure table records draw upon page render
 window.onload = loadAssets;
+
