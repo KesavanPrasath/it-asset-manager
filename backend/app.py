@@ -45,7 +45,13 @@ def add_asset():
         if asset['serial'] == serial:
             return jsonify({"error": "An asset with this serial number already exists"}), 400
         
-    data.append(new_asset)
+   # Saving clean values
+    validated_asset = {
+        "name": name,
+        "serial": serial,
+        "status": status if status else "In Stock"
+    }
+    data.append(validated_asset)
     write_data(data)
     return jsonify(new_asset), 201
 
