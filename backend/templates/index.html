@@ -40,13 +40,16 @@
         </section> <section class="inventory-panel">
             <h2>Current Device Inventory</h2>
 
-       <div class="filter-actions-bar">
-            <div class="search-box">
-                <label for="assetSearch"><strong>Quick Filter Assets: </strong></label>
-                <input type="text" id="assetSearch" onkeyup="filterAssets()" placeholder="Type names, codes or status keywords....">
-            </div>
-            <button class="btn btn-secondary" onclick="loadAssets()">Refresh Inventory</button>
+        <div class="filter-actions-bar">
+        <div class="search-box">
+             <label for="assetSearch"><strong>Quick Filter Assets: </strong></label>
+             <input type="text" id="assetSearch" onkeyup="filterAssets()" placeholder="Type names, codes or status keywords....">
         </div>
+        <div class="action-buttons-group">
+            <button class="btn btn-secondary" onclick="loadAssets()">Refresh Inventory</button>
+            <button class="btn btn-export" onclick="exportCSVReport()">Export Audit Report</button>
+         </div>
+</div>
 
             <div class="table-container">
             <table>

@@ -21,7 +21,7 @@ async function loadAssets() {
                 </div>
             </td>
             <td>
-        // updating the buttons as for classes with help of AI*
+       
                 <button class="btn-action-save" onclick="updateAsset('${asset.serial}')">Save Changes</button>
                 <button class="btn-action-remove" onclick="deleteAsset('${asset.serial}')">Remove</button>
             </td>
