@@ -3,5 +3,10 @@
         "name": "lenovo",
         "serial": "1234",
         "status": "IN STOCK"
+    },
+    {
+        "name": "mackbook pro",
+        "serial": "12345y6",
+        "status": "out of stock"
     }
 ]
