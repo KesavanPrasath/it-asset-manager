@@ -24,3 +24,16 @@ This is a decoupled Information System designed to manage small office IT hardwa
 - **Backend Architecture:** Python Flask REST API
 - **Data Layer:** Flat-file JSON structure 
 - **Frontend Architecture:** Asynchronous vanilla JavaScript interacting with standard DOM elements.
+
+---
+
+## 🚀 Live Deployment
+The application is containerized with Docker and continuously deployed on Google Cloud Platform:
+* **Live App URL:** https://ca2-project-762609539408.europe-west1.run.app
+
+---
+
+## 🤖 GenAI Attribution & Usage Declaration
+In accordance with academic integrity guidelines, Generative AI (Gemini) was utilized during the development of this project:
+1. **Debugging & Logic Fixes:** Assisted in troubleshooting dynamic DOM updates for the dashboard metrics cards in `static/app.js` and resolving Git merge conflicts during deployment.
+2. **Deployment Configuration:** Assisted in drafting the containerization steps (`Dockerfile` configuration) optimized for stateless deployment on Google Cloud Run.
