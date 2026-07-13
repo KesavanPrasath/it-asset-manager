@@ -1,9 +1,14 @@
 const API_URL = '/api/assets';
 
-// READ: Pull assets from API and draw them inside the table body
+// Pull assets from API and draw them inside the table body
+// Pull assets from API and draw them inside the table body
 async function loadAssets() {
     const response = await fetch(API_URL);
     const assets = await response.json();
+    
+    // Update the metrics cards with the fresh data
+    updateMetrics(assets);
+
     const tableBody = document.getElementById('assetTableBody');
     tableBody.innerHTML = ''; 
 
@@ -30,7 +35,7 @@ async function loadAssets() {
     });
 }
 
-// Helper function for specific CSS badge colors
+
 // Helper function for specific CSS badge colors
 function getStatusClass(statusText) {
     if (!statusText) return '';
@@ -47,9 +52,9 @@ function getStatusClass(statusText) {
         return 'status-broken';
     }
     
-    return ''; // Fallback default if nothing matches
+    return ''; // will fallback default if nothing matches
 }
-// CREATE: Extract form inputs and submit stringified objects via POST method
+//Extract form inputs and submit stringified objects via POST method
 async function createAsset() {
     const name = document.getElementById('assetName').value;
     const serial = document.getElementById('assetSerial').value;
@@ -71,7 +76,7 @@ async function createAsset() {
     }
 }
 
-// UPDATE: Identify item row targets and submit current details via PUT method
+//Identify item row targets and submit current details via PUT method
 async function updateAsset(serial) {
     const updatedName = document.getElementById(`name-${serial}`).value;
     const updatedStatus = document.getElementById(`status-${serial}`).value;
@@ -88,7 +93,7 @@ async function updateAsset(serial) {
     }
 }
 
-// DELETE: Issue targeted server instructions via DELETE method
+//Issue targeted server instructions via DELETE method
 async function deleteAsset(serial) {
     if (confirm('Permanently delete this record?')) {
         const response = await fetch(`${API_URL}/${serial}`, {
@@ -101,7 +106,7 @@ async function deleteAsset(serial) {
     }
 }
 
-// FRONTEND FILTER: Real-time query search matching against existing DOM elements
+//Real-time query search matching against existing DOM elements
 function filterAssets() {
     const query = document.getElementById('assetSearch').value.toLowerCase();
     const tableBody = document.getElementById('assetTableBody');
@@ -127,18 +132,18 @@ function filterAssets() {
 // Ensuring table records draw upon page render
 window.onload = loadAssets;
 
-// UTILITY: Parses active DOM inventory items and downloads a formatted CSV audit report
+//Parses active DOM inventory items and downloads a formatted CSV audit report
 function exportCSVReport() {
     const tableBody = document.getElementById('assetTableBody');
     const rows = tableBody.getElementsByTagName('tr');
     
-    // Check if there is actual data to export
+    // Checking if there is actual data to export
     if (rows.length === 0) {
         alert('No asset inventory records available to export.');
         return;
     }
 
-    // Set up the CSV headers
+    // Setting up the CSV headers
     let csvContent = "Device Name,Serial Number,Current Status\n";
 
     // Loop over each row inside the visible table array
