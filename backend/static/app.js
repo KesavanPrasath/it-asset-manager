@@ -54,6 +54,29 @@ function getStatusClass(statusText) {
     
     return ''; // will fallback default if nothing matches
 }
+
+// Calculate and update dashboard metric cards
+function updateMetrics(assets) {
+    const totalAssets = assets.length;
+    let inUseCount = 0;
+    let availableCount = 0;
+
+    assets.forEach(asset => {
+        if (!asset.status) return;
+        const status = asset.status.toLowerCase().trim();
+        if (status === 'in use' || status === 'deployed') {
+            inUseCount++;
+        } else if (status === 'available' || status === 'in stock') {
+            availableCount++;
+        }
+    });
+
+    document.getElementById('total-assets-count').textContent = totalAssets;
+    document.getElementById('in-use-count').textContent = inUseCount;
+    document.getElementById('available-count').textContent = availableCount;
+}
+
+
 //Extract form inputs and submit stringified objects via POST method
 async function createAsset() {
     const name = document.getElementById('assetName').value;
