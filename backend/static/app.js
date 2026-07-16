@@ -1,19 +1,19 @@
 const API_URL = '/api/assets';
 
-// Pull assets from API and draw them inside the table body
-// Pull assets from API and draw them inside the table body
+// Pulled assets from API and draw them inside the table body
+// Pulled assets from API and draw them inside the table body
 async function loadAssets() {
     const response = await fetch(API_URL);
     const assets = await response.json();
     
-    // Update the metrics cards with the fresh data
+    // Updated the metrics cards with the fresh data
     updateMetrics(assets);
 
     const tableBody = document.getElementById('assetTableBody');
     tableBody.innerHTML = ''; 
 
     assets.forEach(asset => {
-        // Determine the color class using helping function
+        // Determined the color class using helping function
         const badgeClass = getStatusClass(asset.status);
 
         const row = document.createElement('tr');
@@ -52,10 +52,10 @@ function getStatusClass(statusText) {
         return 'status-broken';
     }
     
-    return ''; // will fallback default if nothing matches
+    return ''; // It will fallback default if nothing matches
 }
 
-// Calculate and update dashboard metric cards
+// Calculated and updated dashboard metric cards
 function updateMetrics(assets) {
     const totalAssets = assets.length;
     let inUseCount = 0;
@@ -77,7 +77,7 @@ function updateMetrics(assets) {
 }
 
 
-//Extract form inputs and submit stringified objects via POST method
+//Extracted form inputs and submited stringified objects via POST method
 async function createAsset() {
     const name = document.getElementById('assetName').value;
     const serial = document.getElementById('assetSerial').value;
@@ -99,7 +99,7 @@ async function createAsset() {
     }
 }
 
-//Identify item row targets and submit current details via PUT method
+//Identify item row targets and submited current details via PUT method
 async function updateAsset(serial) {
     const updatedName = document.getElementById(`name-${serial}`).value;
     const updatedStatus = document.getElementById(`status-${serial}`).value;
