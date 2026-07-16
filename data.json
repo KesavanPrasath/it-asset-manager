@@ -1,12 +1,17 @@
 [
     {
-        "name": "lenovo",
+        "name": "kes",
         "serial": "1234",
-        "status": "IN STOCK"
+        "status": "in use"
     },
     {
-        "name": "mackbook pro",
-        "serial": "12345y6",
-        "status": "out of stock"
+        "name": "rgr",
+        "serial": "343",
+        "status": "available"
+    },
+    {
+        "name": "fdvd",
+        "serial": "224",
+        "status": "IN STOCK"
     }
 ]
