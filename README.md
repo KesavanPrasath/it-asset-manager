@@ -19,7 +19,7 @@ By submitting this assignment, I am confirming that:
 ---
 
 ## System Overview
-This project is a decoupled information system architecture engineered to manage and streamline small office IT hardware inventories, emphasizing modularity and scalable data handling.
+This project is a web based information system architecture engineered to manage and streamline small office IT hardware inventories, emphasizing modularity and scalable data handling.
 - Backend Architecture: Python Flask REST API
 - Data Layer:Flat-file JSON structure 
 - Frontend Architecture: Asynchronous vanilla JavaScript interacting with standard DOM elements.
@@ -35,6 +35,6 @@ Live App URL: https://ca2-project-762609539408.europe-west1.run.app
 ## GenAI Attribution & Usage Declaration (Gemini)
 In accordance with academic integrity guidelines, Generative AI (Gemini) was utilized during the development of this project:
 
-Technical Troubleshooting: I used AI to analyze and troubleshoot specific logic errors in static/app.js, specifically when resolving technical blockers related to dynamic DOM updates.
+Technical Troubleshooting: I used AI to analyze and troubleshoot specific logic errors in backend/static/app.js, specifically when resolving technical blockers related to dynamic DOM updates.
 
 Infrastructure Optimization: I leveraged AI to verify and refine my Dockerfile configuration, ensuring that the containerization was correctly optimized for stateless deployment on Google Cloud Run.
